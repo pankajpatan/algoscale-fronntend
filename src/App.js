@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Login from './component/Login'
+import Contact from './component/contact/contact'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import DynamicChart from './component/analytics/analytics'
+import Navbar from './component/navbar/navbar'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     
+<BrowserRouter>
+<Navbar/>
+    <Switch>
+  
+  <Route exact path="/" component={Login}/>
+  <Route  path="/contact" component={Contact}/>
+  <Route  path="/analytics" component={DynamicChart}/>
+  
+  
+
+    </Switch>
+    
+      </BrowserRouter>
+
+   
     </div>
   );
 }
